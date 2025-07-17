@@ -1,0 +1,23 @@
+paths:
+  raw_images: data/raw/images
+  raw_labels: data/raw/labels
+  nnunet_raw: data/nnUNet_raw
+  outputs_dir: outputs
+  models_dir: models
+
+dataset:
+  task_name: Hippocampus
+  task_id: 101
+  labels:
+    background: 0
+    hippocampus: 1
+
+split:
+  test_split_fraction: 0.2
+  random_seed: 42
+
+training:
+  configuration: 3d_fullres
+  trainer: nnUNetTrainer_ResEncM
+  fold: 0
+  device: cuda
